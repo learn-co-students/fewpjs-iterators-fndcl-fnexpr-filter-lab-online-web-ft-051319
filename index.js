@@ -1,22 +1,15 @@
-// Code your solution here
-function findMatching(drivers, string) {
-  let match = drivers.filter(e => {
-    return e === string
-  });
-  return match;
-};
-
-function fuzzyMatch(drivers, string){
-  let stringLength = string.length
-  let match = drivers.filter(driver => {
-    return driver.substr(0, stringLength).toLowerCase() === string.toLowerCase()
-  })
-  return match;
+findMatching = (drivers, string) => {
+  return drivers.filter(driver => driver.toLowerCase() === string.toLowerCase())
 }
 
-function matchName(drivers, string){
-  let match = drivers.filter(driver => {
-    return driver.name === string
-  })
-  return match;
+function fuzzyMatch(drivers, string) {
+  return drivers.filter(
+    driver => driver.substr(0, string.length).toLowerCase() === string.toLowerCase()
+  )
+}
+
+function matchName(drivers, string) {
+  return drivers.filter(
+    driver => driver.name.toLowerCase() === string.toLowerCase()
+  )
 }
